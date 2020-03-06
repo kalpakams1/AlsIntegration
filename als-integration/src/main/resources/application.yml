@@ -1,0 +1,11 @@
+#Application Config
+applicationconfig:
+  serverid : dev_server_01
+
+#ALS
+alsurls:
+    baseurl: https://alsprxy231.activity-link.com/kbm/
+    gethotels: als_get_hotels.cgi
+    locationparam: '?location='
+    
+    
