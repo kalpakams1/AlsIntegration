@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.jmotto.logic.als.message.pojo.hotel.Locations;
+import com.jmotto.logic.als.message.pojo.Locations;
 import com.jmotto.logic.als.service.AlsLocationService;
 
 @Service

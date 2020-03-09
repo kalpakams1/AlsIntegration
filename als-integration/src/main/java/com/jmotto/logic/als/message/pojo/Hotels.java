@@ -1,4 +1,4 @@
-package com.jmotto.logic.als.message.pojo.hotel;
+package com.jmotto.logic.als.message.pojo;
 
 import java.util.List;
 

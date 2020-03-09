@@ -1,4 +1,4 @@
-package com.jmotto.logic.als.message.pojo.hotel;
+package com.jmotto.logic.als.message.pojo;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;

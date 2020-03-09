@@ -1,23 +1,23 @@
-package com.jmotto.logic.als.message.pojo.hotel;
+package com.jmotto.logic.als.message.pojo;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "row")
-public class Location {
+public class Transactiontype {
 	
 	@XmlAttribute
-	private String name;
+	private String transactiontype;
 
 	@XmlAttribute
 	private String code;
 
-	public String getName() {
-		return name;
+	public String getTransactiontype() {
+		return transactiontype;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setTransactiontype(String transactiontype) {
+		this.transactiontype = transactiontype;
 	}
 
 	public String getCode() {

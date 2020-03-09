@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import com.jmotto.logic.als.message.pojo.hotel.Hotels;
+import com.jmotto.logic.als.message.pojo.Hotels;
 import com.jmotto.logic.als.service.AlsMessageService;
 
 @Service
