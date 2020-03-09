@@ -13,6 +13,26 @@ public class AlsUrls {
 	
 	private String locationparam;
 	
+	private String getlocations;
+	
+	private String gettransactions;
+	
+	public String getGettransactions() {
+		return gettransactions;
+	}
+
+	public void setGettransactions(String gettransactions) {
+		this.gettransactions = gettransactions;
+	}
+
+	public String getGetlocations() {
+		return getlocations;
+	}
+
+	public void setGetlocations(String getlocations) {
+		this.getlocations = getlocations;
+	}
+
 	public String getBaseurl() {
 		return baseurl;
 	}

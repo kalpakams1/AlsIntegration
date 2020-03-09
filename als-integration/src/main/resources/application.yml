@@ -7,5 +7,7 @@ alsurls:
     baseurl: https://alsprxy231.activity-link.com/kbm/
     gethotels: als_get_hotels.cgi
     locationparam: '?location='
+    getlocations: als_get_locations.cgi
+    gettransactions: als_get_transaction_types.cgi
     
     
