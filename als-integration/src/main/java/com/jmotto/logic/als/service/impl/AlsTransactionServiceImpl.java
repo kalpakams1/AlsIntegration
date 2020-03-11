@@ -17,8 +17,7 @@ public class AlsTransactionServiceImpl extends AlsBaseServiceImpl implements Als
 	public ResponseEntity<?> findTransactions() {
 		Transactiontypes searchResult = null;
 		try {
-			String URL = getAlsUrls().getBaseurl() + getAlsUrls().getGettransactions();
-			searchResult = getRestTemplate().getForObject(URL, Transactiontypes.class);
+			searchResult = getRestTemplate().getForObject(getAlsUrls().getBaseurl() + getAlsUrls().getTransactions(), Transactiontypes.class);
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
 		}

@@ -20,12 +20,13 @@ public class AlsHotelServiceImpl extends AlsBaseServiceImpl implements AlsHotelS
 
 		Hotels searchResult = null;
 		try {
-			String URL = getAlsUrls().getBaseurl() + getAlsUrls().getGethotels();
+			setURL(getAlsUrls().getBaseurl() + getAlsUrls().getHotels());
+			setHasParam(false);
 			if(StringUtils.hasText(location))
 			{
-				URL += getAlsUrls().getLocationparam() + location;
+				appendUrlParam(getAlsUrls().getLocationParam()+location.toString());
 			}
-			searchResult = getRestTemplate().getForObject(URL, Hotels.class);
+			searchResult = getRestTemplate().getForObject(getURL(), Hotels.class);
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
 		}

@@ -17,8 +17,7 @@ public class AlsLocationServiceImpl extends AlsBaseServiceImpl implements AlsLoc
 	public ResponseEntity<?> findLocations() {
 		Locations searchResult = null;
 		try {
-			String URL = getAlsUrls().getBaseurl() + getAlsUrls().getGetlocations();
-			searchResult = getRestTemplate().getForObject(URL, Locations.class);
+			searchResult = getRestTemplate().getForObject(getAlsUrls().getBaseurl() + getAlsUrls().getLocations(), Locations.class);
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
 		}

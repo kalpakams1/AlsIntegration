@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jmotto.logic.als.service.AlsHotelService;
+import com.jmotto.logic.als.service.AlsCategoryService;
 
 @RestController
 @RequestMapping("/api/als")
@@ -19,22 +19,25 @@ public class AlsCategoryController {
 	static Logger log = Logger.getLogger(AlsCategoryController.class.getName());
 	
 	@Autowired
-	AlsHotelService service;
+	AlsCategoryService service;
 	
 	/**
-	 * This method will fetch all the hotels from ALS and return the result in JSON format.
-	 * if the request is made with a location parameter the will return hotels for that location,
-	 * else will return results for all location.
+	 * The als_get_categories.cgi interface all retrieve all categories available to in your system based on products that 
+	 * are active and web enabled. i.e (Helicopter, Scuba Diving, Luau ), and the associated AL-Desk code for the category.
+	 * Optionally you can limit the results to a specific Location by using a location input parameter.
 	 * @param location
 	 * @return
 	 */
 	@GetMapping(value = "/categories", produces = "application/json")
-	public ResponseEntity<?> findHotels(@RequestParam(required = false) String location)
+	public ResponseEntity<?> findCategories(@RequestParam(required = false) Integer location, 
+			@RequestParam(required = false) Integer categoryGroup, @RequestParam(required = false) Boolean includeDesc,
+			@RequestParam(required = false) Boolean imageurl)
 	{
 
-		log.debug("Parameters: " + location);		
+		log.debug("Parameters: location:" + location + "\t categoryGroup:" + categoryGroup 
+				+ "\t includeDesc:" +includeDesc+ "\t imageurl:" +imageurl);		
 		
-		return service.findHotels(location);
+		return service.findCategories(location, categoryGroup, includeDesc, imageurl);
 	}
 
 	

@@ -15,6 +15,10 @@ import com.jmotto.logic.als.service.AlsBaseService;
  */
 public class AlsBaseServiceImpl implements AlsBaseService {
 
+	private String URL = "";
+	
+	private boolean hasParam = false;
+
 	@Autowired
 	private RestTemplate restTemplate;
 
@@ -31,4 +35,31 @@ public class AlsBaseServiceImpl implements AlsBaseService {
 		return alsUrls;
 	}
 
+	public void appendUrlParam(String param) {
+		
+		if(!hasParam) {
+			URL += getAlsUrls().getFirstParam();
+		}
+		else {
+			URL += getAlsUrls().getAppendParam();
+		}
+		setHasParam(true);
+		URL += param;
+	}
+
+	public String getURL() {
+		return URL;
+	}
+
+	public void setURL(String URL) {
+		this.URL = URL;
+	}
+
+	public boolean isHasParam() {
+		return hasParam;
+	}
+
+	public void setHasParam(boolean hasParam) {
+		this.hasParam = hasParam;
+	}
 }

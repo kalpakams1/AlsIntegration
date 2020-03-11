@@ -5,9 +5,14 @@ applicationconfig:
 #ALS
 alsurls:
     baseurl: https://alsprxy231.activity-link.com/kbm/
-    gethotels: als_get_hotels.cgi
-    locationparam: '?location='
-    getlocations: als_get_locations.cgi
-    gettransactions: als_get_transaction_types.cgi
-    
-    
+    hotels: als_get_hotels.cgi
+    locationParam: 'location='
+    locations: als_get_locations.cgi
+    transactions: als_get_transaction_types.cgi
+    categories: als_get_categories.cgi
+    client: als_get_client_changes.cgi?
+    firstParam: '?'
+    appendParam: "&"
+    categoryGroupParam: 'categorygroup='
+    includeDescParam: 'includedesc='
+    imageUrlParam:  'imageurl='
