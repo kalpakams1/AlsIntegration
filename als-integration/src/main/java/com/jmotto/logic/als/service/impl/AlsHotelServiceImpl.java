@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import com.jmotto.logic.als.message.pojo.Hotels;
-import com.jmotto.logic.als.service.AlsMessageService;
+import com.jmotto.logic.als.service.AlsHotelService;
 
 @Service
-public class AlsMessageServiceImpl extends AlsBaseServiceImpl implements AlsMessageService{
+public class AlsHotelServiceImpl extends AlsBaseServiceImpl implements AlsHotelService{
 
-	static Logger log = Logger.getLogger(AlsMessageServiceImpl.class.getName());
+	static Logger log = Logger.getLogger(AlsHotelServiceImpl.class.getName());
 	 
 	@Override
 	public ResponseEntity<?> findHotels(String location)

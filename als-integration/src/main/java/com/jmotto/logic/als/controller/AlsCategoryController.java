@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jmotto.logic.als.service.AlsMessageService;
+import com.jmotto.logic.als.service.AlsHotelService;
 
 @RestController
 @RequestMapping("/api/als")
@@ -19,7 +19,7 @@ public class AlsCategoryController {
 	static Logger log = Logger.getLogger(AlsCategoryController.class.getName());
 	
 	@Autowired
-	AlsMessageService service;
+	AlsHotelService service;
 	
 	/**
 	 * This method will fetch all the hotels from ALS and return the result in JSON format.
