@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.jmotto.logic.als.exception.JmottoAlsException;
 import com.jmotto.logic.als.service.AlsCategoryService;
 
 @RestController
@@ -31,7 +32,7 @@ public class AlsCategoryController {
 	@GetMapping(value = "/categories", produces = "application/json")
 	public ResponseEntity<?> findCategories(@RequestParam(required = false) Integer location, 
 			@RequestParam(required = false) Integer categoryGroup, @RequestParam(required = false) Boolean includeDesc,
-			@RequestParam(required = false) Boolean imageurl)
+			@RequestParam(required = false) Boolean imageurl) throws JmottoAlsException
 	{
 
 		log.debug("Parameters: location:" + location + "\t categoryGroup:" + categoryGroup 

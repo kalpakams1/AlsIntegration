@@ -31,6 +31,46 @@ public class AlsUrls {
 	
 	private String imageUrlParam;
 	
+	private String clientchange;
+	
+	private String clientParam;
+	
+	private String emailtParam;
+	
+	private String ccinfocheckParam;
+	
+	public String getClientParam() {
+		return clientParam;
+	}
+
+	public void setClientParam(String clientParam) {
+		this.clientParam = clientParam;
+	}
+
+	public String getEmailtParam() {
+		return emailtParam;
+	}
+
+	public void setEmailtParam(String emailtParam) {
+		this.emailtParam = emailtParam;
+	}
+
+	public String getCcinfocheckParam() {
+		return ccinfocheckParam;
+	}
+
+	public void setCcinfocheckParam(String ccinfocheckParam) {
+		this.ccinfocheckParam = ccinfocheckParam;
+	}
+
+	public String getClientchange() {
+		return clientchange;
+	}
+
+	public void setClientchange(String clientchange) {
+		this.clientchange = clientchange;
+	}
+
 	public String getImageUrlParam() {
 		return imageUrlParam;
 	}

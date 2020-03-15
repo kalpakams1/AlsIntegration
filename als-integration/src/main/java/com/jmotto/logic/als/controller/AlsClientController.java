@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.jmotto.logic.als.exception.JmottoAlsException;
 import com.jmotto.logic.als.service.AlsClientService;
 
 @RestController
@@ -30,7 +31,7 @@ public class AlsClientController {
 	 */
 	@GetMapping(value = "/getclient", produces = "application/json")
 	public ResponseEntity<?> findClients(@RequestParam(required = false) String client, 
-			@RequestParam(required = false) String email, @RequestParam(required = false) Boolean ccinfocheck)
+			@RequestParam(required = false) String email, @RequestParam(required = false, defaultValue = "false") Boolean ccinfocheck) throws JmottoAlsException
 	{
 
 		log.debug("Parameters: client:" + client + "\t email:" + email + "\t ccinfocheck:" +ccinfocheck);		

@@ -10,9 +10,13 @@ alsurls:
     locations: als_get_locations.cgi
     transactions: als_get_transaction_types.cgi
     categories: als_get_categories.cgi
-    client: als_get_client_changes.cgi?
+    clientchange: als_get_client_changes.cgi?
     firstParam: '?'
     appendParam: "&"
     categoryGroupParam: 'categorygroup='
     includeDescParam: 'includedesc='
     imageUrlParam:  'imageurl='
+    client: 'als_get_client.cgi'
+    clientParam: 'client='
+    emailtParam: 'email='
+    ccinfocheckParam: 'ccinfocheck='
