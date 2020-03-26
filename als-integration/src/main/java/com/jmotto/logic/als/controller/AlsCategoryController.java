@@ -13,7 +13,7 @@ import com.jmotto.logic.als.exception.JmottoAlsException;
 import com.jmotto.logic.als.service.AlsCategoryService;
 
 @RestController
-@RequestMapping("/api/als")
+@RequestMapping("/api/2.6/als")
 @CrossOrigin
 public class AlsCategoryController {
 

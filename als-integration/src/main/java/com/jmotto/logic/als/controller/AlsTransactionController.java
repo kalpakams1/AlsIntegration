@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.jmotto.logic.als.service.AlsTransactionService;
+
 @RestController
-@RequestMapping("/api/als")
+@RequestMapping("/api/2.6/als")
 @CrossOrigin
 public class AlsTransactionController {
 

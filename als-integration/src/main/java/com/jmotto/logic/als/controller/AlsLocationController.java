@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jmotto.logic.als.service.AlsLocationService;
 
 @RestController
-@RequestMapping("/api/als")
+@RequestMapping("/api/2.6/als")
 @CrossOrigin
 public class AlsLocationController {
 

@@ -1,8 +1,6 @@
-package com.jmotto.logic.als.controller;
+package com.jmotto.logic.als.service;
 
 import org.springframework.http.ResponseEntity;
-
-import com.jmotto.logic.als.service.AlsBaseService;
 
 public interface AlsTransactionService extends AlsBaseService {
 

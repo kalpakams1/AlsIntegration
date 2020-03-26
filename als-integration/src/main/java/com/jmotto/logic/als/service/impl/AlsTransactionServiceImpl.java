@@ -5,8 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.jmotto.logic.als.controller.AlsTransactionService;
 import com.jmotto.logic.als.message.pojo.Transactiontypes;
+import com.jmotto.logic.als.service.AlsTransactionService;
 
 @Service
 public class AlsTransactionServiceImpl extends AlsBaseServiceImpl implements AlsTransactionService {
