@@ -4,19 +4,33 @@ applicationconfig:
 
 #ALS
 alsurls:
+    #URLS
     baseurl: https://alsprxy231.activity-link.com/kbm/
-    hotels: als_get_hotels.cgi
-    locationParam: 'location='
+    hotels: als_get_hotels.cgi   
     locations: als_get_locations.cgi
     transactions: als_get_transaction_types.cgi
     categories: als_get_categories.cgi
-    clientchange: als_get_client_changes.cgi?
+    clientchange: als_get_client_changes.cgi?   
+    client: 'als_get_client.cgi'   
+    rateAdditional: als_get_rates_additional.cgi
+    rates: als_get_rates.cgi
+    #Params
+    clientParam: 'client='
+    emailtParam: 'email='
+    ccinfocheckParam: 'ccinfocheck='
     firstParam: '?'
     appendParam: "&"
     categoryGroupParam: 'categorygroup='
     includeDescParam: 'includedesc='
     imageUrlParam:  'imageurl='
-    client: 'als_get_client.cgi'
-    clientParam: 'client='
-    emailtParam: 'email='
-    ccinfocheckParam: 'ccinfocheck='
+    locationParam: 'location='
+    productrateParam: 'productrate='
+    categoryParam: 'category='
+    vendorParam: 'vendor='
+    productParam: 'product='
+    bookingdateParam: 'bookingdate='
+    activitydateParam: 'activitydate='
+    dateParam: 'date='
+    productinfoParam: 'productinfo='
+    contentParam: 'content='
+    wholesaleParam: 'wholesale='

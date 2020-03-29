@@ -7,11 +7,10 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties("alsurls")
 public class AlsUrls {
 
+	//URLS
 	private String baseurl;
 	
 	private String hotels;
-	
-	private String locationParam;
 	
 	private String locations;
 	
@@ -21,6 +20,11 @@ public class AlsUrls {
 	
 	private String categories;
 	
+	private String rateAdditional;
+	
+	private String rates;
+	
+	//Parameters
 	private String firstParam;
 	
 	private String appendParam;
@@ -39,6 +43,125 @@ public class AlsUrls {
 	
 	private String ccinfocheckParam;
 	
+	private String locationParam;
+	
+	private String productrateParam;
+	
+	private String categoryParam;
+	
+	private String vendorParam;
+	
+	private String productParam;
+	
+	private String bookingdateParam;
+	
+	private String activitydateParam;
+	
+	private String dateParam;	
+	
+	private String productinfoParam;
+	
+	private String contentParam;	
+	
+	private String wholesaleParam;
+	
+	
+	public String getBookingdateParam() {
+		return bookingdateParam;
+	}
+
+	public void setBookingdateParam(String bookingdateParam) {
+		this.bookingdateParam = bookingdateParam;
+	}
+
+	public String getActivitydateParam() {
+		return activitydateParam;
+	}
+
+	public void setActivitydateParam(String activitydateParam) {
+		this.activitydateParam = activitydateParam;
+	}
+
+	public String getDateParam() {
+		return dateParam;
+	}
+
+	public void setDateParam(String dateParam) {
+		this.dateParam = dateParam;
+	}
+
+	public String getProductinfoParam() {
+		return productinfoParam;
+	}
+
+	public void setProductinfoParam(String productinfoParam) {
+		this.productinfoParam = productinfoParam;
+	}
+
+	public String getContentParam() {
+		return contentParam;
+	}
+
+	public void setContentParam(String contentParam) {
+		this.contentParam = contentParam;
+	}
+
+	public String getWholesaleParam() {
+		return wholesaleParam;
+	}
+
+	public void setWholesaleParam(String wholesaleParam) {
+		this.wholesaleParam = wholesaleParam;
+	}
+
+	public String getProductParam() {
+		return productParam;
+	}
+
+	public void setProductParam(String productParam) {
+		this.productParam = productParam;
+	}
+
+	public String getVendorParam() {
+		return vendorParam;
+	}
+
+	public void setVendorParam(String vendorParam) {
+		this.vendorParam = vendorParam;
+	}
+
+	public String getCategoryParam() {
+		return categoryParam;
+	}
+
+	public void setCategoryParam(String categoryParam) {
+		this.categoryParam = categoryParam;
+	}
+
+	public String getProductrateParam() {
+		return productrateParam;
+	}
+
+	public void setProductrateParam(String productrateParam) {
+		this.productrateParam = productrateParam;
+	}
+
+	public String getRateAdditional() {
+		return rateAdditional;
+	}
+
+	public void setRateAdditional(String rateAdditional) {
+		this.rateAdditional = rateAdditional;
+	}
+
+	public String getRates() {
+		return rates;
+	}
+
+	public void setRates(String rates) {
+		this.rates = rates;
+	}
+
 	public String getClientParam() {
 		return clientParam;
 	}
