@@ -15,6 +15,7 @@ alsurls:
     rateAdditional: als_get_rates_additional.cgi
     rates: als_get_rates.cgi
     voucher: als_get_vouchers.cgi
+    productPricing: als_get_product_pricing.cgi
     #Params
     clientParam: 'client='
     emailtParam: 'email='
@@ -38,3 +39,4 @@ alsurls:
     seqParam: 'seq='
     voucherParam: 'voucher='
     issuedParam: 'issued='
+    

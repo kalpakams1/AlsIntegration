@@ -26,6 +26,8 @@ public class AlsUrls {
 	
 	private String voucher;
 	
+	private String productPricing;
+	
 	//Parameters
 	private String firstParam;
 	
@@ -73,6 +75,14 @@ public class AlsUrls {
 	
 	private String issuedParam;
 	
+	public String getProductPricing() {
+		return productPricing;
+	}
+
+	public void setProductPricing(String productPricing) {
+		this.productPricing = productPricing;
+	}
+
 	public String getVoucher() {
 		return voucher;
 	}
