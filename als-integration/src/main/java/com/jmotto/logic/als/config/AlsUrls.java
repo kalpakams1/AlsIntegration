@@ -24,6 +24,8 @@ public class AlsUrls {
 	
 	private String rates;
 	
+	private String voucher;
+	
 	//Parameters
 	private String firstParam;
 	
@@ -65,7 +67,44 @@ public class AlsUrls {
 	
 	private String wholesaleParam;
 	
+	private String seqParam;
 	
+	private String voucherParam;
+	
+	private String issuedParam;
+	
+	public String getVoucher() {
+		return voucher;
+	}
+
+	public void setVoucher(String voucher) {
+		this.voucher = voucher;
+	}
+
+	public String getSeqParam() {
+		return seqParam;
+	}
+
+	public void setSeqParam(String seqParam) {
+		this.seqParam = seqParam;
+	}
+
+	public String getVoucherParam() {
+		return voucherParam;
+	}
+
+	public void setVoucherParam(String voucherParam) {
+		this.voucherParam = voucherParam;
+	}
+
+	public String getIssuedParam() {
+		return issuedParam;
+	}
+
+	public void setIssuedParam(String issuedParam) {
+		this.issuedParam = issuedParam;
+	}
+
 	public String getBookingdateParam() {
 		return bookingdateParam;
 	}
