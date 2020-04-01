@@ -28,6 +28,8 @@ public class AlsUrls {
 	
 	private String productPricing;
 	
+	private String insertClient;
+	
 	//Parameters
 	private String firstParam;
 	
@@ -75,6 +77,95 @@ public class AlsUrls {
 	
 	private String issuedParam;
 	
+	private String webusercodeParam;	
+	
+	private String lastnameParam;		
+	
+	private String emailParam;			
+	
+	private String arrivaldateParam;	
+	
+	private String departuredateParam;	
+	
+	private String cellphoneParam;		
+	
+	private String faxphoneParam;		
+	
+	private String homephoneParam;		
+
+	
+	public String getWebusercodeParam() {
+		return webusercodeParam;
+	}
+
+	public void setWebusercodeParam(String webusercodeParam) {
+		this.webusercodeParam = webusercodeParam;
+	}
+
+	public String getLastnameParam() {
+		return lastnameParam;
+	}
+
+	public void setLastnameParam(String lastname) {
+		this.lastnameParam = lastname;
+	}
+
+	public String getEmailParam() {
+		return emailParam;
+	}
+
+	public void setEmailParam(String email) {
+		this.emailParam = email;
+	}
+
+	public String getArrivaldateParam() {
+		return arrivaldateParam;
+	}
+
+	public void setArrivaldateParam(String arrivaldate) {
+		this.arrivaldateParam = arrivaldate;
+	}
+
+	public String getDeparturedateParam() {
+		return departuredateParam;
+	}
+
+	public void setDeparturedateParam(String departuredate) {
+		this.departuredateParam = departuredate;
+	}
+
+	public String getCellphoneParam() {
+		return cellphoneParam;
+	}
+
+	public void setCellphoneParam(String cellphone) {
+		this.cellphoneParam = cellphone;
+	}
+
+	public String getFaxphoneParam() {
+		return faxphoneParam;
+	}
+
+	public void setFaxphoneParam(String faxphone) {
+		this.faxphoneParam = faxphone;
+	}
+
+	public String getHomephoneParam() {
+		return homephoneParam;
+	}
+
+	public void setHomephoneParam(String homephone) {
+		this.homephoneParam = homephone;
+	}
+
+	public String getInsertClient() {
+		return insertClient;
+	}
+
+	public void setInsertClient(String insertClient) {
+		this.insertClient = insertClient;
+	}
+
 	public String getProductPricing() {
 		return productPricing;
 	}

@@ -16,6 +16,7 @@ alsurls:
     rates: als_get_rates.cgi
     voucher: als_get_vouchers.cgi
     productPricing: als_get_product_pricing.cgi
+    insertClient: als_insert_client.cgi
     #Params
     clientParam: 'client='
     emailtParam: 'email='
@@ -39,4 +40,11 @@ alsurls:
     seqParam: 'seq='
     voucherParam: 'voucher='
     issuedParam: 'issued='
-    
+    webusercodeParam: 'webusercode='
+    lastnameParam: 'lastname='
+    emailParam: 'email='
+    arrivaldateParam: 'arrivaldate='
+    departuredateParam: 'departuredate='
+    cellphoneParam: 'cellphone='
+    faxphoneParam: 'faxphone='
+    homephoneParam: 'homephone='
