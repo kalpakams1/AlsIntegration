@@ -35,6 +35,9 @@ public class Client {
 	private String city; 
 	private String state; 
 	private String zip;
+	private String webusercode;
+	private String webreference;
+	
 	public String getCode() {
 		return code;
 	}
@@ -204,4 +207,29 @@ public class Client {
 		this.zip = zip;
 	} 
 
+	public String getWebusercode() {
+		return webusercode;
+	}
+	public void setWebusercode(String webusercode) {
+		this.webusercode = webusercode;
+	}
+	
+	public String getWebreference() {
+		return webreference;
+	}
+	public void setWebreference(String webreference) {
+		this.webreference = webreference;
+	}
+	@Override
+	public String toString() {
+		return "Client [code=" + code + ", name=" + name + ", firstname=" + firstname + ", lastname=" + lastname
+				+ ", hotel=" + hotel + ", room=" + room + ", arrivaldate=" + arrivaldate + ", departuredate="
+				+ departuredate + ", homephone=" + homephone + ", notes=" + notes + ", lastvoucher=" + lastvoucher
+				+ ", email=" + email + ", faxphone=" + faxphone + ", cellphone=" + cellphone + ", otherphone="
+				+ otherphone + ", workphone=" + workphone + ", hotelname=" + hotelname + ", source=" + source
+				+ ", usercode=" + usercode + ", deskcode=" + deskcode + ", deskname=" + deskname + ", sourcename="
+				+ sourcename + ", username=" + username + ", address1=" + address1 + ", address2=" + address2
+				+ ", city=" + city + ", state=" + state + ", zip=" + zip + ", webusercode=" + webusercode+ ", webreference=" + webreference + "]";
+	}
+	
 }

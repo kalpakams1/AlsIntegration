@@ -30,6 +30,10 @@ public class AlsUrls {
 	
 	private String insertClient;
 	
+	private String clientChanges;
+	
+	private String updateClient;
+	
 	//Parameters
 	private String firstParam;
 	
@@ -41,11 +45,9 @@ public class AlsUrls {
 	
 	private String imageUrlParam;
 	
-	private String clientchange;
-	
 	private String clientParam;
 	
-	private String emailtParam;
+	private String clientCodeParam;
 	
 	private String ccinfocheckParam;
 	
@@ -93,7 +95,30 @@ public class AlsUrls {
 	
 	private String homephoneParam;		
 
+	private String firstNameParam;
 	
+	private String hotelNameParam;
+	
+	private String roomNumberParam;
+	
+	private String workphoneParam;
+	
+	private String otherphoneParam;
+	
+	private String notesParam;
+	
+	private String hotelParam;
+	
+	public String getHotelParam() {
+		return hotelParam;
+	}
+
+	public void setHotelParam(String hotelParam) {
+		this.hotelParam = hotelParam;
+	}
+
+	private String webreferenceParam;
+	    	
 	public String getWebusercodeParam() {
 		return webusercodeParam;
 	}
@@ -310,14 +335,6 @@ public class AlsUrls {
 		this.clientParam = clientParam;
 	}
 
-	public String getEmailtParam() {
-		return emailtParam;
-	}
-
-	public void setEmailtParam(String emailtParam) {
-		this.emailtParam = emailtParam;
-	}
-
 	public String getCcinfocheckParam() {
 		return ccinfocheckParam;
 	}
@@ -326,12 +343,12 @@ public class AlsUrls {
 		this.ccinfocheckParam = ccinfocheckParam;
 	}
 
-	public String getClientchange() {
-		return clientchange;
+	public String getClientChanges() {
+		return clientChanges;
 	}
 
-	public void setClientchange(String clientchange) {
-		this.clientchange = clientchange;
+	public void setClientChanges(String clientChanges) {
+		this.clientChanges = clientChanges;
 	}
 
 	public String getImageUrlParam() {
@@ -428,6 +445,78 @@ public class AlsUrls {
 
 	public void setCategories(String categories) {
 		this.categories = categories;
+	}
+
+	public String getUpdateClient() {
+		return updateClient;
+	}
+
+	public void setUpdateClient(String updateClient) {
+		this.updateClient = updateClient;
+	}
+
+	public String getClientCodeParam() {
+		return clientCodeParam;
+	}
+
+	public void setClientCodeParam(String clientCodeParam) {
+		this.clientCodeParam = clientCodeParam;
+	}
+
+	public String getFirstNameParam() {
+		return firstNameParam;
+	}
+
+	public void setFirstNameParam(String firstNameParam) {
+		this.firstNameParam = firstNameParam;
+	}
+
+	public String getHotelNameParam() {
+		return hotelNameParam;
+	}
+
+	public void setHotelNameParam(String hotelNameParam) {
+		this.hotelNameParam = hotelNameParam;
+	}
+
+	public String getRoomNumberParam() {
+		return roomNumberParam;
+	}
+
+	public void setRoomNumberParam(String roomNumberParam) {
+		this.roomNumberParam = roomNumberParam;
+	}
+
+	public String getWorkphoneParam() {
+		return workphoneParam;
+	}
+
+	public void setWorkphoneParam(String workphoneParam) {
+		this.workphoneParam = workphoneParam;
+	}
+
+	public String getOtherphoneParam() {
+		return otherphoneParam;
+	}
+
+	public void setOtherphoneParam(String otherphoneParam) {
+		this.otherphoneParam = otherphoneParam;
+	}
+
+	public String getNotesParam() {
+		return notesParam;
+	}
+
+	public void setNotesParam(String notesParam) {
+		this.notesParam = notesParam;
+	}
+
+	public String getWebreferenceParam() {
+		return webreferenceParam;
+	}
+
+	public void setWebreferenceParam(String webreferenceParam) {
+		this.webreferenceParam = webreferenceParam;
 	}
 
 }

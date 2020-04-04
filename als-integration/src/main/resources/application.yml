@@ -10,16 +10,17 @@ alsurls:
     locations: als_get_locations.cgi
     transactions: als_get_transaction_types.cgi
     categories: als_get_categories.cgi
-    clientchange: als_get_client_changes.cgi?   
+    clientChanges: als_get_client_changes.cgi 
     client: 'als_get_client.cgi'   
     rateAdditional: als_get_rates_additional.cgi
     rates: als_get_rates.cgi
     voucher: als_get_vouchers.cgi
     productPricing: als_get_product_pricing.cgi
     insertClient: als_insert_client.cgi
+    updateClient: als_update_client.cgi
+    
     #Params
     clientParam: 'client='
-    emailtParam: 'email='
     ccinfocheckParam: 'ccinfocheck='
     firstParam: '?'
     appendParam: "&"
@@ -48,3 +49,12 @@ alsurls:
     cellphoneParam: 'cellphone='
     faxphoneParam: 'faxphone='
     homephoneParam: 'homephone='
+    clientCodeParam: 'clientcode='
+    firstNameParam: 'firstname='
+    hotelNameParam: 'hotelname='
+    roomNumberParam: 'room='
+    workphoneParam: 'workphone='
+    otherphoneParam: 'otherphone='
+    notesParam: 'notes='
+    webreferenceParam: 'webreference='
+    hotelParam: 'hotel='

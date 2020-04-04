@@ -7,6 +7,7 @@ import org.springframework.util.StringUtils;
 
 import com.jmotto.logic.als.exception.JmottoAlsException;
 import com.jmotto.logic.als.message.pojo.Client;
+import com.jmotto.logic.als.message.pojo.ClientChanges;
 import com.jmotto.logic.als.message.pojo.Clients;
 import com.jmotto.logic.als.service.AlsClientService;
 
@@ -31,7 +32,7 @@ public class AlsClientServiceImpl extends AlsBaseServiceImpl implements AlsClien
 			}
 			if(null != email)
 			{
-				appendUrlParam(getAlsUrls().getEmailtParam() + email);
+				appendUrlParam(getAlsUrls().getEmailParam() + email);
 			}
 			if(ccinfocheck)
 			{
@@ -45,49 +46,159 @@ public class AlsClientServiceImpl extends AlsBaseServiceImpl implements AlsClien
 	}
 
 	@Override
-	public ResponseEntity<?> insertClient(Integer webusercode, String lastname, String email, String arrivaldate,
-			String departuredate, Integer cellphone, Integer faxphone, Integer homephone) {
+	public ResponseEntity<?> insertClient(Client client) {
 		Client savedObject = null;
 		try {
 			setURL(getAlsUrls().getBaseurl() + getAlsUrls().getInsertClient());
 			setHasParam(false);
-			if(webusercode != null && webusercode >0)
+			if(!StringUtils.isEmpty(client.getWebusercode()))
 			{
-				appendUrlParam(getAlsUrls().getWebusercodeParam() + webusercode);
+				appendUrlParam(getAlsUrls().getWebusercodeParam() + client.getWebusercode());
 			}
-			if(!StringUtils.isEmpty(lastname))
+			if(!StringUtils.isEmpty(client.getFirstname()))
 			{
-				appendUrlParam(getAlsUrls().getLastnameParam() + lastname);
+				appendUrlParam(getAlsUrls().getFirstNameParam() + client.getFirstname());
 			}
-			if(!StringUtils.isEmpty(email))
+			if(!StringUtils.isEmpty(client.getLastname()))
 			{
-				appendUrlParam(getAlsUrls().getEmailParam() + email);
+				appendUrlParam(getAlsUrls().getLastnameParam() + client.getLastname());
 			}
-			if(!StringUtils.isEmpty(arrivaldate))
+			if(!StringUtils.isEmpty(client.getEmail()))
 			{
-				appendUrlParam(getAlsUrls().getArrivaldateParam() + arrivaldate);
+				appendUrlParam(getAlsUrls().getEmailParam() + client.getEmail());
 			}
-			if(!StringUtils.isEmpty(departuredate))
+			if(!StringUtils.isEmpty(client.getArrivaldate()))
 			{
-				appendUrlParam(getAlsUrls().getDeparturedateParam() + departuredate);
+				appendUrlParam(getAlsUrls().getArrivaldateParam() + client.getArrivaldate());
 			}
-			if(cellphone != null && cellphone >0)
+			if(!StringUtils.isEmpty(client.getDeparturedate()))
 			{
-				appendUrlParam(getAlsUrls().getCellphoneParam() + cellphone);
+				appendUrlParam(getAlsUrls().getDeparturedateParam() + client.getDeparturedate());
 			}
-			if(faxphone != null && faxphone >0)
+			if(!StringUtils.isEmpty(client.getCellphone()))
 			{
-				appendUrlParam(getAlsUrls().getFaxphoneParam() + faxphone);
+				appendUrlParam(getAlsUrls().getCellphoneParam() + client.getCellphone());
 			}
-			if(homephone != null && homephone >0)
+			if(!StringUtils.isEmpty(client.getFaxphone()))
 			{
-				appendUrlParam(getAlsUrls().getHomephoneParam() + homephone);
+				appendUrlParam(getAlsUrls().getFaxphoneParam() + client.getFaxphone());
 			}
+			if(!StringUtils.isEmpty(client.getHomephone()))
+			{
+				appendUrlParam(getAlsUrls().getHomephoneParam() + client.getHomephone());
+			}
+			if(!StringUtils.isEmpty(client.getHotel()))
+			{
+				appendUrlParam(getAlsUrls().getHotelParam() + client.getHotel());
+			}
+			if(!StringUtils.isEmpty(client.getRoom()))
+			{
+				appendUrlParam(getAlsUrls().getRoomNumberParam() + client.getRoom());
+			}
+			if(!StringUtils.isEmpty(client.getWorkphone()))
+			{
+				appendUrlParam(getAlsUrls().getWorkphoneParam() + client.getWorkphone());
+			}
+			if(!StringUtils.isEmpty(client.getOtherphone()))
+			{
+				appendUrlParam(getAlsUrls().getOtherphoneParam() + client.getOtherphone());
+			}
+			if(!StringUtils.isEmpty(client.getNotes()))
+			{
+				appendUrlParam(getAlsUrls().getNotesParam() + client.getNotes());
+			}
+			
 			savedObject = getRestTemplate().getForObject(getURL(), Client.class);
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
 		}
 		return ResponseEntity.status(HttpStatus.OK).body(savedObject);
+	}
+
+	@Override
+	public ResponseEntity<?> updateClient(Client client) {
+		Client savedObject = null;
+		try {
+			setURL(getAlsUrls().getBaseurl() + getAlsUrls().getUpdateClient());
+			setHasParam(false);
+			appendUrlParam(getAlsUrls().getClientCodeParam() + client.getCode());
+			appendUrlParam(getAlsUrls().getWebusercodeParam() + client.getWebusercode());
+			if(!StringUtils.isEmpty(client.getFirstname()))
+			{
+				appendUrlParam(getAlsUrls().getFirstNameParam() + client.getFirstname());
+			}
+			if(!StringUtils.isEmpty(client.getLastname()))
+			{
+				appendUrlParam(getAlsUrls().getLastnameParam() + client.getLastname());
+			}
+			if(!StringUtils.isEmpty(client.getEmail()))
+			{
+				appendUrlParam(getAlsUrls().getEmailParam() + client.getEmail());
+			}
+			if(!StringUtils.isEmpty(client.getArrivaldate()))
+			{
+				appendUrlParam(getAlsUrls().getArrivaldateParam() + client.getArrivaldate());
+			}
+			if(!StringUtils.isEmpty(client.getDeparturedate()))
+			{
+				appendUrlParam(getAlsUrls().getDeparturedateParam() + client.getDeparturedate());
+			}
+			if(!StringUtils.isEmpty(client.getCellphone()))
+			{
+				appendUrlParam(getAlsUrls().getCellphoneParam() + client.getCellphone());
+			}
+			if(!StringUtils.isEmpty(client.getFaxphone()))
+			{
+				appendUrlParam(getAlsUrls().getFaxphoneParam() + client.getFaxphone());
+			}
+			if(!StringUtils.isEmpty(client.getHomephone()))
+			{
+				appendUrlParam(getAlsUrls().getHomephoneParam() + client.getHomephone());
+			}		
+			if(!StringUtils.isEmpty(client.getHotelname()))
+			{
+				appendUrlParam(getAlsUrls().getHotelNameParam() + client.getHotelname());
+			}
+			if(!StringUtils.isEmpty(client.getRoom()))
+			{
+				appendUrlParam(getAlsUrls().getRoomNumberParam() + client.getRoom());
+			}
+			if(!StringUtils.isEmpty(client.getWorkphone()))
+			{
+				appendUrlParam(getAlsUrls().getWorkphoneParam() + client.getWorkphone());
+			}
+			if(!StringUtils.isEmpty(client.getOtherphone()))
+			{
+				appendUrlParam(getAlsUrls().getOtherphoneParam() + client.getOtherphone());
+			}
+			if(!StringUtils.isEmpty(client.getNotes()))
+			{
+				appendUrlParam(getAlsUrls().getNotesParam() + client.getNotes());
+			}
+			if(!StringUtils.isEmpty(client.getWebreference()))
+			{
+				appendUrlParam(getAlsUrls().getWebreferenceParam() + client.getWebreference());
+			}
+			
+			savedObject = getRestTemplate().getForObject(getURL(), Client.class);
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+		}
+		return ResponseEntity.status(HttpStatus.OK).body(savedObject);
+	}
+
+	@Override
+	public ResponseEntity<?> getClientChanges(Integer clientNumber) {
+		ClientChanges searchResult = null;
+		try {
+			setURL(getAlsUrls().getBaseurl() + getAlsUrls().getClientChanges());
+			setHasParam(false);
+			appendUrlParam(getAlsUrls().getClientParam() + clientNumber);
+			searchResult = getRestTemplate().getForObject(getURL(), ClientChanges.class);
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+		}
+		return ResponseEntity.status(HttpStatus.OK).body(searchResult);
 	}
 
 }
