@@ -23,7 +23,7 @@ public class AlsVoucherController {
 	AlsVoucherService service;
 	
 	/**
-	 * Vouchers can be identified by either the primekey (seq) or by using the client:Integer identifier along with the voucher number. 
+	 * Vouchers can be identified by either the primary key (seq) or by using the client:Integer identifier along with the voucher number. 
 	 * When editing a voucher with AL-Desk, the Client Identifier along with a voucher number that is unique for that client is used.
 	 * @param seq, voucher, client, issued	
 	 * @return Vouchers
