@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import com.jmotto.logic.als.exception.JmottoAlsException;
+import com.jmotto.logic.als.message.pojo.AlsError;
 import com.jmotto.logic.als.message.pojo.Client;
 import com.jmotto.logic.als.message.pojo.ClientChanges;
 import com.jmotto.logic.als.message.pojo.Clients;
@@ -46,8 +47,8 @@ public class AlsClientServiceImpl extends AlsBaseServiceImpl implements AlsClien
 	}
 
 	@Override
-	public ResponseEntity<?> insertClient(Client client) {
-		Client savedObject = null;
+	public ResponseEntity<?> insertClient(Client client) throws JmottoAlsException{
+		Clients savedObject = null;
 		try {
 			setURL(getAlsUrls().getBaseurl() + getAlsUrls().getInsertClient());
 			setHasParam(false);
@@ -103,12 +104,18 @@ public class AlsClientServiceImpl extends AlsBaseServiceImpl implements AlsClien
 			{
 				appendUrlParam(getAlsUrls().getOtherphoneParam() + client.getOtherphone());
 			}
-			if(!StringUtils.isEmpty(client.getNotes()))
+			/*
+			 * Notes will be inserted automatically only uncomment if we need to append any additional information
+			 * if(!StringUtils.isEmpty(client.getNotes())) {
+			 * appendUrlParam(getAlsUrls().getNotesParam() +
+			 * client.getNotes().replaceAll(" ", "%20")); }
+			 */
+			savedObject = getRestTemplate().getForObject(getURL(), Clients.class);
+			if(null == savedObject.getClient().get(0).getClient())
 			{
-				appendUrlParam(getAlsUrls().getNotesParam() + client.getNotes());
+				AlsError alsError = getRestTemplate().getForObject(getURL(), AlsError.class);
+				throw new JmottoAlsException("ALS Error:- "+alsError.getRow().get(0).getError(), "AlsClientServiceImpl.insertClient");
 			}
-			
-			savedObject = getRestTemplate().getForObject(getURL(), Client.class);
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
 		}
@@ -116,13 +123,19 @@ public class AlsClientServiceImpl extends AlsBaseServiceImpl implements AlsClien
 	}
 
 	@Override
-	public ResponseEntity<?> updateClient(Client client) {
-		Client savedObject = null;
+	public ResponseEntity<?> updateClient(Client client) throws JmottoAlsException{
+		Clients savedObject = null;
 		try {
 			setURL(getAlsUrls().getBaseurl() + getAlsUrls().getUpdateClient());
 			setHasParam(false);
-			appendUrlParam(getAlsUrls().getClientCodeParam() + client.getCode());
-			appendUrlParam(getAlsUrls().getWebusercodeParam() + client.getWebusercode());
+			if(!StringUtils.isEmpty(client.getClient()))
+			{
+				appendUrlParam(getAlsUrls().getClientParam() + client.getClient());
+			}
+			if(!StringUtils.isEmpty(client.getWebusercode()))
+			{
+				appendUrlParam(getAlsUrls().getWebusercodeParam() + client.getWebusercode());
+			}
 			if(!StringUtils.isEmpty(client.getFirstname()))
 			{
 				appendUrlParam(getAlsUrls().getFirstNameParam() + client.getFirstname());
@@ -180,7 +193,12 @@ public class AlsClientServiceImpl extends AlsBaseServiceImpl implements AlsClien
 				appendUrlParam(getAlsUrls().getWebreferenceParam() + client.getWebreference());
 			}
 			
-			savedObject = getRestTemplate().getForObject(getURL(), Client.class);
+			savedObject = getRestTemplate().getForObject(getURL(), Clients.class);
+			if(null == savedObject.getClient().get(0).getCode())
+			{
+				AlsError alsError = getRestTemplate().getForObject(getURL(), AlsError.class);
+				throw new JmottoAlsException("ALS Error:- "+alsError.getRow().get(0).getError(), "AlsClientServiceImpl.updateClient");
+			}
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
 		}

@@ -3,11 +3,15 @@ package com.jmotto.logic.als.message.pojo;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 @XmlRootElement(name = "row")
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Client {
 	
 	@XmlAttribute
 	private String code; 
+	private String client;
 	private String name; 
 	private String firstname; 
 	private String lastname; 
@@ -38,6 +42,12 @@ public class Client {
 	private String webusercode;
 	private String webreference;
 	
+	public String getClient() {
+		return client;
+	}
+	public void setClient(String client) {
+		this.client = client;
+	}
 	public String getCode() {
 		return code;
 	}

@@ -12,7 +12,12 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
 	protected ResponseEntity<JmottoAlsExceptionResponse> handleRepRestControllerException(final JmottoAlsException exception) {
 		JmottoAlsExceptionResponse alsIntExceptionResponse = new JmottoAlsExceptionResponse();
 		DetailedErrorMessage detailedText = new DetailedErrorMessage();
-		detailedText.setCode(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase());
+		if(null == exception.getErrorKey()) {
+			detailedText.setCode(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase());
+		}
+		else {
+			detailedText.setCode(exception.getErrorKey());
+		}
 		detailedText.setMessage(buildErrorMessage(exception));
 		detailedText.setTarget(exception.getTarget());
 		alsIntExceptionResponse.setSuccess(false);

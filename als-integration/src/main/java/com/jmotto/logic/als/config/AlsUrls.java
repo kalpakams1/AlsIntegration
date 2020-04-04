@@ -109,6 +109,17 @@ public class AlsUrls {
 	
 	private String hotelParam;
 	
+	private String codeParam;
+	
+	
+	public String getCodeParam() {
+		return codeParam;
+	}
+
+	public void setCodeParam(String codeParam) {
+		this.codeParam = codeParam;
+	}
+
 	public String getHotelParam() {
 		return hotelParam;
 	}

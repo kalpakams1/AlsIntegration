@@ -3,7 +3,6 @@ package com.jmotto.logic.als.controller;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -55,7 +54,6 @@ public class AlsClientController {
 	{
 
 		log.debug("Parameters: " + client.toString());		
-		
 		return service.insertClient(client);
 	}
 	
@@ -71,12 +69,6 @@ public class AlsClientController {
 	{
 
 		log.debug("Parameters: " + client.toString());		
-		if(StringUtils.isEmpty(client.getWebusercode())
-				&& StringUtils.isEmpty(client.getCode()))
-		{
-			JmottoAlsException exception = new JmottoAlsException("Client number and Webusercode is required", "AlsClientServiceImpl.updateClient");
-			throw exception;
-		}
 		return service.updateClient(client);
 	}
 	
