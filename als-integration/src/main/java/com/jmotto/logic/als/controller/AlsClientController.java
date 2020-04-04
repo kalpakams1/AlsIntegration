@@ -7,6 +7,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -50,7 +51,7 @@ public class AlsClientController {
 	 * @return
 	 */
 	@PutMapping(value = "/insertclient", produces = "application/json")
-	public ResponseEntity<?> insertClient_Copy(@RequestParam(required = true) Client client) throws JmottoAlsException
+	public ResponseEntity<?> insertClient(@RequestBody(required = true) Client client) throws JmottoAlsException
 	{
 
 		log.debug("Parameters: " + client.toString());		
@@ -66,7 +67,7 @@ public class AlsClientController {
 	 * @return
 	 */
 	@PutMapping(value = "/updateclient", produces = "application/json")
-	public ResponseEntity<?> updateClient(@RequestParam(required = true) Client client) throws JmottoAlsException
+	public ResponseEntity<?> updateClient(@RequestBody(required = true) Client client) throws JmottoAlsException
 	{
 
 		log.debug("Parameters: " + client.toString());		
