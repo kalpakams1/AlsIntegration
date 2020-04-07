@@ -31,13 +31,12 @@ public class AlsVoucherController {
 	@GetMapping(value = "/vouchers", produces = "application/json")
 	public ResponseEntity<?> findCategories(@RequestParam(required = false) Integer seq, 
 			@RequestParam(required = false) Integer voucher, @RequestParam(required = false) Integer client,
-			@RequestParam(required = false) Boolean issued) throws JmottoAlsException
+			@RequestParam(required = false) boolean issued) throws JmottoAlsException
 	{
 
 		log.debug("Parameters: seq:" + seq + "\t voucher:" +voucher
 				+ "\t client:" +client+ "\t issued:" +issued);		
 		
 		return service.getVouchers(seq, voucher, client, issued);
-	}
-	
+	}	
 }

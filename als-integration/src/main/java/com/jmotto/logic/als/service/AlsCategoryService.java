@@ -4,6 +4,6 @@ import org.springframework.http.ResponseEntity;
 
 public interface AlsCategoryService extends AlsBaseService{
 
-	public ResponseEntity<?> findCategories(Integer location, Integer categoryGroup, Boolean includeDesc, Boolean imageurl);
+	public ResponseEntity<?> findCategories(Integer location, Integer categoryGroup, boolean includeDesc, boolean imageurl);
 	
 }

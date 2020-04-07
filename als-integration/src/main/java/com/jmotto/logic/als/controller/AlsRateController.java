@@ -51,8 +51,8 @@ public class AlsRateController {
 			@RequestParam(required = false) Integer category, @RequestParam(required = false) Integer vendor,
 			@RequestParam(required = false) Integer product, @RequestParam(required = false) String bookingdate,
 			@RequestParam(required = false) String activitydate,@RequestParam(required = false) String date,
-			@RequestParam(required = false) Boolean productinfo,@RequestParam(required = false) Boolean content,
-			@RequestParam(required = false) Boolean wholesale) throws JmottoAlsException
+			@RequestParam(required = false) boolean productinfo,@RequestParam(required = false) boolean content,
+			@RequestParam(required = false) boolean wholesale) throws JmottoAlsException
 	{
 
 		log.debug("Parameters: location:" + location + "\t vendor:" + vendor 

@@ -11,7 +11,7 @@ import com.jmotto.logic.als.service.AlsVoucherService;
 public class AlsVoucherServiceImpl extends AlsBaseServiceImpl implements AlsVoucherService {
 
 	@Override
-	public ResponseEntity<?> getVouchers(Integer seq, Integer voucher, Integer client, Boolean issued) {
+	public ResponseEntity<?> getVouchers(Integer seq, Integer voucher, Integer client, boolean issued) {
 		Vouchers searchResult = null;
 		try {
 			setURL(getAlsUrls().getBaseurl() + getAlsUrls().getVoucher());

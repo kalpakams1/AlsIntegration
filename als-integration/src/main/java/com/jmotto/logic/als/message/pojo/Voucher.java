@@ -3,7 +3,10 @@ package com.jmotto.logic.als.message.pojo;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 @XmlRootElement(name = "row")
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Voucher {
 	
 	@XmlAttribute
@@ -15,7 +18,9 @@ public class Voucher {
 	private Integer agency;       
 	private Integer retailrate;   
 	private Integer giftdiscount; 
-
+	private Integer seq;
+	private Integer client;
+	
 	private String actdate;       
 	private String clientname;    
 	private String agencyname;    
@@ -29,6 +34,27 @@ public class Voucher {
 	private Float vendorrate;     
 	private Float grossrate;      
 	private Float netrate;
+	
+	private Boolean issued;
+	
+	public Integer getSeq() {
+		return seq;
+	}
+	public void setSeq(Integer seq) {
+		this.seq = seq;
+	}
+	public Integer getClient() {
+		return client;
+	}
+	public void setClient(Integer client) {
+		this.client = client;
+	}
+	public Boolean getIssued() {
+		return issued;
+	}
+	public void setIssued(Boolean issued) {
+		this.issued = issued;
+	}
 	public Integer getVoucher() {
 		return voucher;
 	}
@@ -148,6 +174,16 @@ public class Voucher {
 	}
 	public void setNetrate(Float netrate) {
 		this.netrate = netrate;
+	}
+	@Override
+	public String toString() {
+		return "Voucher [voucher=" + voucher + ", blockno=" + blockno + ", product=" + product + ", prodrate="
+				+ prodrate + ", quantity=" + quantity + ", agency=" + agency + ", retailrate=" + retailrate
+				+ ", giftdiscount=" + giftdiscount + ", seq=" + seq + ", client=" + client + ", actdate=" + actdate
+				+ ", clientname=" + clientname + ", agencyname=" + agencyname + ", productname=" + productname
+				+ ", prodratename=" + prodratename + ", locationname=" + locationname + ", issuedate=" + issuedate
+				+ ", total=" + total + ", tax=" + tax + ", vendorrate=" + vendorrate + ", grossrate=" + grossrate
+				+ ", netrate=" + netrate + ", issued=" + issued + "]";
 	}        
 
 }

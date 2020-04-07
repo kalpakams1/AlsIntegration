@@ -31,8 +31,8 @@ public class AlsCategoryController {
 	 */
 	@GetMapping(value = "/categories", produces = "application/json")
 	public ResponseEntity<?> findCategories(@RequestParam(required = false) Integer location, 
-			@RequestParam(required = false) Integer categoryGroup, @RequestParam(required = false) Boolean includeDesc,
-			@RequestParam(required = false) Boolean imageurl) throws JmottoAlsException
+			@RequestParam(required = false) Integer categoryGroup, @RequestParam(required = false) boolean includeDesc,
+			@RequestParam(required = false) boolean imageurl) throws JmottoAlsException
 	{
 
 		log.debug("Parameters: location:" + location + "\t categoryGroup:" + categoryGroup 

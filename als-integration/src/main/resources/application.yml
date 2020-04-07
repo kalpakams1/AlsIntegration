@@ -18,6 +18,7 @@ alsurls:
     productPricing: als_get_product_pricing.cgi
     insertClient: als_insert_client.cgi
     updateClient: als_update_client.cgi
+    insertVoucher: als_insert_voucher.cgi
     
     #Params
     clientParam: 'client='
@@ -59,3 +60,11 @@ alsurls:
     webreferenceParam: 'webreference='
     hotelParam: 'hotel='
     codeParam: 'code='
+    activityTimeParam: 'activitytime='
+    blockParam: 'block='
+    countParam: 'count='
+    pricingCodeParam: 'pricingcode#='
+    quantityParam: 'qty#='
+    customPaymentParam: 'custompayment='
+    agencyParam: 'agency='
+    unissuedParam: 'unissued='

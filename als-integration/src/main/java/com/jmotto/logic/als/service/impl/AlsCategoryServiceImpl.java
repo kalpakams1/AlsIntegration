@@ -11,8 +11,8 @@ import com.jmotto.logic.als.service.AlsCategoryService;
 public class AlsCategoryServiceImpl extends AlsBaseServiceImpl implements AlsCategoryService {
 
 	@Override
-	public ResponseEntity<?> findCategories(Integer location, Integer categoryGroup, Boolean includeDesc,
-			Boolean imageurl) {
+	public ResponseEntity<?> findCategories(Integer location, Integer categoryGroup, boolean includeDesc,
+			boolean imageurl) {
 		Categories searchResult = null;
 		try {
 			setURL(getAlsUrls().getBaseurl() + getAlsUrls().getCategories());

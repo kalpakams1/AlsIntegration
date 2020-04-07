@@ -34,7 +34,11 @@ public class AlsUrls {
 	
 	private String updateClient;
 	
+	private String insertVoucher;
+	
 	//Parameters
+	private String activityTimeParam;
+	
 	private String firstParam;
 	
 	private String appendParam;
@@ -111,7 +115,93 @@ public class AlsUrls {
 	
 	private String codeParam;
 	
+	private String blockParam;
 	
+	private String countParam;
+	
+	private String pricingCodeParam;
+	
+	private String quantityParam;
+	
+	private String customPaymentParam;
+	
+	private String agencyParam;
+	
+	private String unissuedParam;
+	
+	
+	public String getUnissuedParam() {
+		return unissuedParam;
+	}
+
+	public void setUnissuedParam(String unissuedParam) {
+		this.unissuedParam = unissuedParam;
+	}
+
+	public String getAgencyParam() {
+		return agencyParam;
+	}
+
+	public void setAgencyParam(String agencyParam) {
+		this.agencyParam = agencyParam;
+	}
+
+	public String getCustomPaymentParam() {
+		return customPaymentParam;
+	}
+
+	public void setCustomPaymentParam(String customPaymentParam) {
+		this.customPaymentParam = customPaymentParam;
+	}
+
+	public String getQuantityParam() {
+		return quantityParam;
+	}
+
+	public void setQuantityParam(String quantityParam) {
+		this.quantityParam = quantityParam;
+	}
+
+	public String getPricingCodeParam() {
+		return pricingCodeParam;
+	}
+
+	public void setPricingCodeParam(String pricingCodeParam) {
+		this.pricingCodeParam = pricingCodeParam;
+	}
+
+	public String getCountParam() {
+		return countParam;
+	}
+
+	public void setCountParam(String countParam) {
+		this.countParam = countParam;
+	}
+
+	public String getBlockParam() {
+		return blockParam;
+	}
+
+	public void setBlockParam(String blockParam) {
+		this.blockParam = blockParam;
+	}
+
+	public String getActivityTimeParam() {
+		return activityTimeParam;
+	}
+
+	public void setActivityTimeParam(String activityTimeParam) {
+		this.activityTimeParam = activityTimeParam;
+	}
+
+	public String getInsertVoucher() {
+		return insertVoucher;
+	}
+
+	public void setInsertVoucher(String insertVoucher) {
+		this.insertVoucher = insertVoucher;
+	}
+
 	public String getCodeParam() {
 		return codeParam;
 	}
