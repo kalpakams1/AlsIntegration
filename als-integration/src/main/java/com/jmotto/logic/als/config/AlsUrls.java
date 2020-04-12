@@ -36,7 +36,12 @@ public class AlsUrls {
 	
 	private String insertVoucher;
 	
+	private String productSearch;
+	
 	//Parameters
+	
+	private String nodeFaultContentParam;
+	
 	private String activityTimeParam;
 	
 	private String firstParam;
@@ -129,7 +134,62 @@ public class AlsUrls {
 	
 	private String unissuedParam;
 	
+	private String productSearchParam;
 	
+	private String descriptionSearchParam;
+	
+	private String contentNameParam;
+	
+	private String inactiveParam;
+	
+	public String getInactiveParam() {
+		return inactiveParam;
+	}
+
+	public void setInactiveParam(String inactiveParam) {
+		this.inactiveParam = inactiveParam;
+	}
+
+	public String getDescriptionSearchParam() {
+		return descriptionSearchParam;
+	}
+
+	public void setDescriptionSearchParam(String descriptionSearchParam) {
+		this.descriptionSearchParam = descriptionSearchParam;
+	}
+
+	public String getContentNameParam() {
+		return contentNameParam;
+	}
+
+	public void setContentNameParam(String contentNameParam) {
+		this.contentNameParam = contentNameParam;
+	}
+
+	public String getProductSearchParam() {
+		return productSearchParam;
+	}
+
+	public void setProductSearchParam(String productSearchParam) {
+		this.productSearchParam = productSearchParam;
+	}
+
+	public String getNodeFaultContentParam() {
+		return nodeFaultContentParam;
+	}
+
+	public void setNodeFaultContentParam(String nodeFaultContentParam) {
+		this.nodeFaultContentParam = nodeFaultContentParam;
+	}
+
+	public String getProductSearch() {
+		return productSearch;
+	}
+
+	public void setProductSearch(String productSearch) {
+		this.productSearch = productSearch;
+	}
+
 	public String getUnissuedParam() {
 		return unissuedParam;
 	}

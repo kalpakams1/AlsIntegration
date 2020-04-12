@@ -1,6 +1,5 @@
 package com.jmotto.logic.als.controller;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,14 +9,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jmotto.logic.als.service.AlsHotelService;
+import com.jmotto.logic.als.util.LogThat;
 
 @RestController
 @RequestMapping("/api/2.6/als")
 @CrossOrigin
 public class AlsHotelController {
 
-	static Logger log = Logger.getLogger(AlsHotelController.class.getName());
-	
 	@Autowired
 	AlsHotelService service;
 	
@@ -29,11 +27,9 @@ public class AlsHotelController {
 	 * @return
 	 */
 	@GetMapping(value = "/gethotels", produces = "application/json")
+	@LogThat
 	public ResponseEntity<?> findHotels(@RequestParam(required = false) String location)
 	{
-
-		log.debug("Parameters: " + location);		
-		
 		return service.findHotels(location);
 	}
 

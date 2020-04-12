@@ -19,6 +19,7 @@ alsurls:
     insertClient: als_insert_client.cgi
     updateClient: als_update_client.cgi
     insertVoucher: als_insert_voucher.cgi
+    productSearch: als_get_product_search.cgi
     
     #Params
     clientParam: 'client='
@@ -68,3 +69,8 @@ alsurls:
     customPaymentParam: 'custompayment='
     agencyParam: 'agency='
     unissuedParam: 'unissued='
+    nodeFaultContentParam: 'nodefaultcontent='
+    productSearchParam: 'productsearch='
+    descriptionSearchParam: 'descriptionsearch='
+    contentNameParam: 'contentname='
+    inactiveParam: 'inactive='

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jmotto.logic.als.exception.JmottoAlsException;
 import com.jmotto.logic.als.service.AlsVoucherService;
+import com.jmotto.logic.als.util.LogThat;
 
 @RestController
 @RequestMapping("/api/2.6/als")
@@ -29,14 +30,11 @@ public class AlsVoucherController {
 	 * @return Vouchers
 	 */
 	@GetMapping(value = "/vouchers", produces = "application/json")
+	@LogThat
 	public ResponseEntity<?> findCategories(@RequestParam(required = false) Integer seq, 
 			@RequestParam(required = false) Integer voucher, @RequestParam(required = false) Integer client,
 			@RequestParam(required = false) boolean issued) throws JmottoAlsException
-	{
-
-		log.debug("Parameters: seq:" + seq + "\t voucher:" +voucher
-				+ "\t client:" +client+ "\t issued:" +issued);		
-		
+	{	
 		return service.getVouchers(seq, voucher, client, issued);
 	}	
 }

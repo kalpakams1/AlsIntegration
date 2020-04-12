@@ -29,6 +29,176 @@ public class Products {
 	
 	private String categoryname;
 
+	private String descript;
+	
+	private String strikethrutext;
+	
+	private String shortdescription;
+	
+	private String productspecial;
+	
+	private String agentnotes;
+	
+	private String web_blackouttext;
+	
+	private String name;
+	
+	private String popular;
+	
+	private String producttime;
+	
+	private String dowavail;
+	
+	private String nobookingsafter;
+	
+	private String imageurlx;
+	
+	private Integer maxbook_qty;
+	
+	private Integer website_bookdays;
+	
+	private Integer categorygroup;
+	
+	private String categorygroupname;
+	
+	private String aln_product;
+	
+	public String getDescript() {
+		return descript;
+	}
+
+	public void setDescript(String descript) {
+		this.descript = descript;
+	}
+
+	public String getStrikethrutext() {
+		return strikethrutext;
+	}
+
+	public void setStrikethrutext(String strikethrutext) {
+		this.strikethrutext = strikethrutext;
+	}
+
+	public String getShortdescription() {
+		return shortdescription;
+	}
+
+	public void setShortdescription(String shortdescription) {
+		this.shortdescription = shortdescription;
+	}
+
+	public String getProductspecial() {
+		return productspecial;
+	}
+
+	public void setProductspecial(String productspecial) {
+		this.productspecial = productspecial;
+	}
+
+	public String getAgentnotes() {
+		return agentnotes;
+	}
+
+	public void setAgentnotes(String agentnotes) {
+		this.agentnotes = agentnotes;
+	}
+
+	public String getWeb_blackouttext() {
+		return web_blackouttext;
+	}
+
+	public void setWeb_blackouttext(String web_blackouttext) {
+		this.web_blackouttext = web_blackouttext;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPopular() {
+		return popular;
+	}
+
+	public void setPopular(String popular) {
+		this.popular = popular;
+	}
+
+	public String getProducttime() {
+		return producttime;
+	}
+
+	public void setProducttime(String producttime) {
+		this.producttime = producttime;
+	}
+
+	public String getDowavail() {
+		return dowavail;
+	}
+
+	public void setDowavail(String dowavail) {
+		this.dowavail = dowavail;
+	}
+
+	public String getNobookingsafter() {
+		return nobookingsafter;
+	}
+
+	public void setNobookingsafter(String nobookingsafter) {
+		this.nobookingsafter = nobookingsafter;
+	}
+
+	public String getImageurlx() {
+		return imageurlx;
+	}
+
+	public void setImageurlx(String imageurlx) {
+		this.imageurlx = imageurlx;
+	}
+
+	public Integer getMaxbook_qty() {
+		return maxbook_qty;
+	}
+
+	public void setMaxbook_qty(Integer maxbook_qty) {
+		this.maxbook_qty = maxbook_qty;
+	}
+
+	public Integer getWebsite_bookdays() {
+		return website_bookdays;
+	}
+
+	public void setWebsite_bookdays(Integer website_bookdays) {
+		this.website_bookdays = website_bookdays;
+	}
+
+	public Integer getCategorygroup() {
+		return categorygroup;
+	}
+
+	public void setCategorygroup(Integer categorygroup) {
+		this.categorygroup = categorygroup;
+	}
+
+	public String getCategorygroupname() {
+		return categorygroupname;
+	}
+
+	public void setCategorygroupname(String categorygroupname) {
+		this.categorygroupname = categorygroupname;
+	}
+
+	public String getAln_product() {
+		return aln_product;
+	}
+
+	public void setAln_product(String aln_product) {
+		this.aln_product = aln_product;
+	}
+
 	public Integer getCode() {
 		return code;
 	}
@@ -115,6 +285,20 @@ public class Products {
 
 	public void setCategoryname(String categoryname) {
 		this.categoryname = categoryname;
+	}
+
+	@Override
+	public String toString() {
+		return "Products [code=" + code + ", vendor=" + vendor + ", category=" + category + ", location=" + location
+				+ ", vendorname=" + vendorname + ", locationname=" + locationname + ", productname=" + productname
+				+ ", description=" + description + ", webjpglocation=" + webjpglocation + ", vouchernotes="
+				+ vouchernotes + ", categoryname=" + categoryname + ", descript=" + descript + ", strikethrutext="
+				+ strikethrutext + ", shortdescription=" + shortdescription + ", productspecial=" + productspecial
+				+ ", agentnotes=" + agentnotes + ", web_blackouttext=" + web_blackouttext + ", name=" + name
+				+ ", popular=" + popular + ", producttime=" + producttime + ", dowavail=" + dowavail
+				+ ", nobookingsafter=" + nobookingsafter + ", imageurlx=" + imageurlx + ", maxbook_qty=" + maxbook_qty
+				+ ", website_bookdays=" + website_bookdays + ", categorygroup=" + categorygroup + ", categorygroupname="
+				+ categorygroupname + ", aln_product=" + aln_product + "]";
 	}
 	
 	

@@ -1,6 +1,5 @@
 package com.jmotto.logic.als.controller;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,13 +14,12 @@ import com.jmotto.logic.als.exception.JmottoAlsException;
 import com.jmotto.logic.als.message.pojo.Client;
 import com.jmotto.logic.als.message.pojo.ClientVoucher;
 import com.jmotto.logic.als.service.AlsClientService;
+import com.jmotto.logic.als.util.LogThat;
 
 @RestController
 @RequestMapping("/api/2.6/als")
 @CrossOrigin
 public class AlsClientController {
-
-	static Logger log = Logger.getLogger(AlsClientController.class.getName());
 
 	@Autowired
 	AlsClientService service;
@@ -35,11 +33,10 @@ public class AlsClientController {
 	 * @return
 	 */
 	@GetMapping(value = "/getclient", produces = "application/json")
+	@LogThat
 	public ResponseEntity<?> findClients(@RequestParam(required = false) String client,
 			@RequestParam(required = false) String email,
 			@RequestParam(required = false, defaultValue = "false") boolean ccinfocheck) throws JmottoAlsException {
-
-		log.debug("Parameters: client:" + client + "\t email:" + email + "\t ccinfocheck:" + ccinfocheck);
 
 		return service.findClients(client, email, ccinfocheck);
 	}
@@ -55,9 +52,9 @@ public class AlsClientController {
 	 * @return
 	 */
 	@PutMapping(value = "/insertclient", produces = "application/json")
+	@LogThat
 	public ResponseEntity<?> insertClient(@RequestBody(required = true) Client client) throws JmottoAlsException {
 
-		log.debug("Parameters: " + client.toString());
 		return service.insertClient(client);
 	}
 
@@ -72,9 +69,9 @@ public class AlsClientController {
 	 * @return
 	 */
 	@PutMapping(value = "/updateclient", produces = "application/json")
+	@LogThat
 	public ResponseEntity<?> updateClient(@RequestBody(required = true) Client client) throws JmottoAlsException {
 
-		log.debug("Parameters: " + client.toString());
 		return service.updateClient(client);
 	}
 
@@ -89,10 +86,9 @@ public class AlsClientController {
 	 * @return
 	 */
 	@GetMapping(value = "/getclientchanges", produces = "application/json")
+	@LogThat
 	public ResponseEntity<?> getClientChanges(@RequestParam(required = true) Integer clientNumber)
 			throws JmottoAlsException {
-
-		log.debug("Parameters: clientNumber- " + clientNumber);
 
 		return service.getClientChanges(clientNumber);
 	}
@@ -112,11 +108,9 @@ public class AlsClientController {
 	 * @return
 	 */
 	@PutMapping(value = "/insertvoucher", produces = "application/json") 
+	@LogThat
 	public ResponseEntity<?> insertVoucher(@RequestBody(required = true) ClientVoucher
 		  clientVoucher) throws JmottoAlsException {
 		  
-		  log.debug("Parameters: " + clientVoucher.toString()); return
-		  service.insertClientVoucher(clientVoucher); }
-		 
-
+		  return  service.insertClientVoucher(clientVoucher); }
 }

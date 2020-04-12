@@ -1,6 +1,5 @@
 package com.jmotto.logic.als.controller;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,14 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jmotto.logic.als.exception.JmottoAlsException;
 import com.jmotto.logic.als.service.AlsCategoryService;
+import com.jmotto.logic.als.util.LogThat;
 
 @RestController
 @RequestMapping("/api/2.6/als")
 @CrossOrigin
 public class AlsCategoryController {
 
-	static Logger log = Logger.getLogger(AlsCategoryController.class.getName());
-	
 	@Autowired
 	AlsCategoryService service;
 	
@@ -30,14 +28,12 @@ public class AlsCategoryController {
 	 * @return
 	 */
 	@GetMapping(value = "/categories", produces = "application/json")
+	@LogThat
 	public ResponseEntity<?> findCategories(@RequestParam(required = false) Integer location, 
 			@RequestParam(required = false) Integer categoryGroup, @RequestParam(required = false) boolean includeDesc,
 			@RequestParam(required = false) boolean imageurl) throws JmottoAlsException
 	{
 
-		log.debug("Parameters: location:" + location + "\t categoryGroup:" + categoryGroup 
-				+ "\t includeDesc:" +includeDesc+ "\t imageurl:" +imageurl);		
-		
 		return service.findCategories(location, categoryGroup, includeDesc, imageurl);
 	}
 

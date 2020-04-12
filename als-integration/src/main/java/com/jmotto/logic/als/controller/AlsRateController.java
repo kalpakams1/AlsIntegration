@@ -1,6 +1,5 @@
 package com.jmotto.logic.als.controller;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,14 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jmotto.logic.als.exception.JmottoAlsException;
 import com.jmotto.logic.als.service.AlsRateService;
+import com.jmotto.logic.als.util.LogThat;
 
 @RestController
 @RequestMapping("/api/2.6/als")
 @CrossOrigin
 public class AlsRateController {
 
-	static Logger log = Logger.getLogger(AlsRateController.class.getName());
-	
 	@Autowired
 	AlsRateService service;
 	
@@ -28,11 +26,10 @@ public class AlsRateController {
 	 * @return
 	 */
 	@GetMapping(value = "/ratesadditional", produces = "application/json")
+	@LogThat
 	public ResponseEntity<?> findRateAdditional(@RequestParam(required = false) Integer productrate) throws JmottoAlsException
 	{
 
-		log.debug("Parameters: Productrate:" + productrate );		
-		
 		return service.getRateAdditional(productrate);
 	}
 
@@ -47,6 +44,7 @@ public class AlsRateController {
 	 * @return
 	 */
 	@GetMapping(value = "/rates", produces = "application/json")
+	@LogThat
 	public ResponseEntity<?> findCategories(@RequestParam(required = false) Integer location, 
 			@RequestParam(required = false) Integer category, @RequestParam(required = false) Integer vendor,
 			@RequestParam(required = false) Integer product, @RequestParam(required = false) String bookingdate,
@@ -54,13 +52,6 @@ public class AlsRateController {
 			@RequestParam(required = false) boolean productinfo,@RequestParam(required = false) boolean content,
 			@RequestParam(required = false) boolean wholesale) throws JmottoAlsException
 	{
-
-		log.debug("Parameters: location:" + location + "\t vendor:" + vendor 
-				+ "\t category:" +category+ "\t bookingdate:" +bookingdate
-				+ "\t date:" +date+ "\t productinfo:" +productinfo
-				+ "\t content:" +content+ "\t wholesale:" +wholesale
-				+ "\t product:" +product+ "\t activitydate:" +activitydate);		
-		
 		return service.getRates(location, category, vendor, product, 
 				bookingdate, activitydate, date, productinfo, content, wholesale);
 	}

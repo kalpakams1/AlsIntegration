@@ -1,6 +1,5 @@
 package com.jmotto.logic.als.controller;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -9,14 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jmotto.logic.als.service.AlsTransactionService;
+import com.jmotto.logic.als.util.LogThat;
 
 @RestController
 @RequestMapping("/api/2.6/als")
 @CrossOrigin
 public class AlsTransactionController {
 
-	static Logger log = Logger.getLogger(AlsTransactionController.class.getName());
-	
 	@Autowired
 	AlsTransactionService service;
 	
@@ -25,6 +23,7 @@ public class AlsTransactionController {
 	 * @return
 	 */
 	@GetMapping(value = "/transactions", produces = "application/json")
+	@LogThat
 	public ResponseEntity<?> findTransactions()
 	{
 		return service.findTransactions();
