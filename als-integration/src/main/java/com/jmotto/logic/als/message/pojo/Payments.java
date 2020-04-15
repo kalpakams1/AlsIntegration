@@ -10,18 +10,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "root")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Products {
+public class Payments {
 	
-	@XmlElementWrapper(name="products")
+	@XmlElementWrapper(name="payments")
     @XmlElement(name="row")
-	private List<Product> products;
+	private List<Pricing> payments;
 
-	public List<Product> getProducts() {
-		return products;
+	public List<Pricing> getPayments() {
+		return payments;
 	}
 
-	public void setProducts(List<Product> products) {
-		this.products = products;
+	public void setPayments(List<Pricing> payments) {
+		this.payments = payments;
 	}
-	
 }

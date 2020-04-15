@@ -20,6 +20,7 @@ alsurls:
     updateClient: als_update_client.cgi
     insertVoucher: als_insert_voucher.cgi
     productSearch: als_get_product_search.cgi
+    product: als_get_products.cgi
     
     #Params
     clientParam: 'client='

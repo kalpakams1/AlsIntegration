@@ -38,6 +38,8 @@ public class AlsUrls {
 	
 	private String productSearch;
 	
+	private String product;
+	
 	//Parameters
 	
 	private String nodeFaultContentParam;
@@ -142,6 +144,15 @@ public class AlsUrls {
 	
 	private String inactiveParam;
 	
+	
+	public String getProduct() {
+		return product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
+	}
+
 	public String getInactiveParam() {
 		return inactiveParam;
 	}

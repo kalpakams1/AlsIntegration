@@ -4,11 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jmotto.logic.als.exception.JmottoAlsException;
+import com.jmotto.logic.als.message.pojo.AlsSearchCommonParameters;
 import com.jmotto.logic.als.service.AlsPricingProductService;
 import com.jmotto.logic.als.util.LogThat;
 
@@ -56,5 +58,16 @@ public class AlsProductPricingController {
 
 		return service.getAllProducts(product, vendor, location, category, content, nodefaultcontent,productsearch
 				, descriptionsearch, categorygroup, contentname, inactive);
+	}
+	
+	/**
+	 * The als_get_products.cgi interface will retrieve all Product  and information  about those products i.e.( Vendor, Category, Location ) 
+	 * available to in your system based on if the products that are active and web enabled.
+	 */
+	@GetMapping(value = "/getproduct", produces = "application/json")
+	@LogThat
+	public ResponseEntity<?> getProducts(@RequestBody(required = false) AlsSearchCommonParameters searchParams) throws JmottoAlsException {
+
+		return service.getProducts(searchParams);
 	}
 }
