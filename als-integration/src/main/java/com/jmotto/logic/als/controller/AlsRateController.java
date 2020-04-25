@@ -4,11 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jmotto.logic.als.exception.JmottoAlsException;
+import com.jmotto.logic.als.message.pojo.AlsSearchCommonParameters;
 import com.jmotto.logic.als.service.AlsRateService;
 import com.jmotto.logic.als.util.LogThat;
 
@@ -45,15 +47,14 @@ public class AlsRateController {
 	 */
 	@GetMapping(value = "/rates", produces = "application/json")
 	@LogThat
-	public ResponseEntity<?> findCategories(@RequestParam(required = false) Integer location, 
-			@RequestParam(required = false) Integer category, @RequestParam(required = false) Integer vendor,
-			@RequestParam(required = false) Integer product, @RequestParam(required = false) String bookingdate,
-			@RequestParam(required = false) String activitydate,@RequestParam(required = false) String date,
-			@RequestParam(required = false) boolean productinfo,@RequestParam(required = false) boolean content,
-			@RequestParam(required = false) boolean wholesale) throws JmottoAlsException
+	public ResponseEntity<?> findCategories(@RequestBody(required = false) AlsSearchCommonParameters searchParams) throws JmottoAlsException
 	{
-		return service.getRates(location, category, vendor, product, 
-				bookingdate, activitydate, date, productinfo, content, wholesale);
+		if(null == searchParams) {
+			searchParams = new AlsSearchCommonParameters();
+		}
+		return service.getRates(searchParams.getLocation(), searchParams.getCategory(), searchParams.getVendor(), searchParams.getProduct(), 
+				searchParams.getBookingdate(), searchParams.getActivitydate(), searchParams.getDate(), searchParams.isProductinfo()
+				, searchParams.getContent(), searchParams.isWholesale());
 	}
 	
 }

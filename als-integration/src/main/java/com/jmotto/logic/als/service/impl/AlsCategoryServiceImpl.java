@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.jmotto.logic.als.message.pojo.Categories;
+import com.jmotto.logic.als.message.pojo.CategoryGroups;
 import com.jmotto.logic.als.service.AlsCategoryService;
 
 @Service
@@ -34,6 +35,19 @@ public class AlsCategoryServiceImpl extends AlsBaseServiceImpl implements AlsCat
 				appendUrlParam(getAlsUrls().getImageUrlParam() + imageurl);
 			}
 			searchResult = getRestTemplate().getForObject(getURL(), Categories.class);
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+		}
+		return ResponseEntity.status(HttpStatus.OK).body(searchResult);
+	}
+
+	@Override
+	public ResponseEntity<?> findCategoryGroups() {
+		CategoryGroups searchResult = null;
+		try {
+			setURL(getAlsUrls().getBaseurl() + getAlsUrls().getCategoryGroups());	
+			setHasParam(false);
+			searchResult = getRestTemplate().getForObject(getURL(), CategoryGroups.class);
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
 		}

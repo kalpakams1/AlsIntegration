@@ -22,7 +22,7 @@ public class AlsUrls {
 	
 	private String rateAdditional;
 	
-	private String rates;
+	private String rates; 
 	
 	private String voucher;
 	
@@ -39,6 +39,12 @@ public class AlsUrls {
 	private String productSearch;
 	
 	private String product;
+	
+	private String categoryGroups;
+	
+	private String companyInfo;
+	
+	private String vendors;
 	
 	//Parameters
 	
@@ -689,6 +695,30 @@ public class AlsUrls {
 
 	public void setWebreferenceParam(String webreferenceParam) {
 		this.webreferenceParam = webreferenceParam;
+	}
+
+	public String getCategoryGroups() {
+		return categoryGroups;
+	}
+
+	public void setCategoryGroups(String categoryGroups) {
+		this.categoryGroups = categoryGroups;
+	}
+
+	public String getCompanyInfo() {
+		return companyInfo;
+	}
+
+	public void setCompanyInfo(String companyInfo) {
+		this.companyInfo = companyInfo;
+	}
+
+	public String getVendors() {
+		return vendors;
+	}
+
+	public void setVendors(String vendors) {
+		this.vendors = vendors;
 	}
 
 }

@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jmotto.logic.als.exception.JmottoAlsException;
@@ -30,34 +29,32 @@ public class AlsProductPricingController {
 	 */
 	@GetMapping(value = "/getproductpricing", produces = "application/json")
 	@LogThat
-	public ResponseEntity<?> getProductPricing(@RequestParam(required = false) Integer product, 
-			@RequestParam(required = false) Integer vendor, @RequestParam(required = false) Integer productRate) 
+	public ResponseEntity<?> getProductPricing(@RequestBody(required = false) AlsSearchCommonParameters searchParams) 
 					throws JmottoAlsException
 	{
-
-		return service.getProductPricing(product, vendor, productRate);
+		if(null == searchParams) {
+			searchParams = new AlsSearchCommonParameters();
+		}
+		return service.getProductPricing(searchParams.getProduct(), searchParams.getVendor(), searchParams.getProductRate());
 	}
-	
+	 
 	/**
 	 * The als_get_products.cgi interface will retrieve all Product  and information  about those products i.e.( Vendor, Category, Location )
 	 * available to in your system based on if the products that are active and web enabled.
-	 * @param location, category, vendor, product, content, nodefaultcontent, 
-	 * 			productsearch, descriptionsearch, categorygroup, contentname, inactive
+	 * @param location, category, vendor, product, content, nodefaultcontent, productsearch, descriptionsearch, categorygroup, contentname, inactive
 	 * @return Products
 	 */
 	@GetMapping(value = "/getallproducts", produces = "application/json")
 	@LogThat
-	public ResponseEntity<?> getAllProducts(@RequestParam(required = false) Integer location, 
-			@RequestParam(required = false) Integer category, @RequestParam(required = false) Integer vendor,
-			@RequestParam(required = false) Integer product, @RequestParam(required = false) Integer categorygroup
-			, @RequestParam(required = false) boolean content, @RequestParam(required = false) boolean nodefaultcontent
-			, @RequestParam(required = false) boolean inactive, @RequestParam(required = false) String productsearch,
-			@RequestParam(required = false) String descriptionsearch, @RequestParam(required = false) String contentname) 
+	public ResponseEntity<?> getAllProducts(@RequestBody(required = false) AlsSearchCommonParameters searchParams) 
 					throws JmottoAlsException
 	{
-
-		return service.getAllProducts(product, vendor, location, category, content, nodefaultcontent,productsearch
-				, descriptionsearch, categorygroup, contentname, inactive);
+		if(null == searchParams) {
+			searchParams = new AlsSearchCommonParameters();
+		}
+		return service.getAllProducts(searchParams.getProduct(), searchParams.getVendor(), searchParams.getLocation()
+				, searchParams.getCategory(), searchParams.getContent(), searchParams.getNodefaultcontent(),searchParams.getProductsearch()
+				, searchParams.getDescriptionsearch(), searchParams.getCategorygroup(), searchParams.getContentname(), searchParams.getInactive());
 	}
 	
 	/**
@@ -67,7 +64,9 @@ public class AlsProductPricingController {
 	@GetMapping(value = "/getproduct", produces = "application/json")
 	@LogThat
 	public ResponseEntity<?> getProducts(@RequestBody(required = false) AlsSearchCommonParameters searchParams) throws JmottoAlsException {
-
+		if(null == searchParams) {
+			searchParams = new AlsSearchCommonParameters();
+		}
 		return service.getProducts(searchParams);
 	}
 }

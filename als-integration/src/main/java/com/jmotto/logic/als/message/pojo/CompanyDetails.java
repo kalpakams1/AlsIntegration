@@ -13,18 +13,29 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @XmlRootElement(name = "root")
 @XmlAccessorType(XmlAccessType.FIELD)
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public class Vendors {
+public class CompanyDetails {
 	
-	@XmlElementWrapper(name="vendors")
+	@XmlElementWrapper(name="company")
     @XmlElement(name="row")
-	private List<Vendor> vendors;
+	private List<Company> company;
+	
+	@XmlElementWrapper(name="namespaces")
+	private NameSpaces namespaces;
 
-	public List<Vendor> getVendors() {
-		return vendors;
+	public List<Company> getCompany() {
+		return company;
 	}
 
-	public void setVendors(List<Vendor> vendors) {
-		this.vendors = vendors;
+	public void setCompany(List<Company> company) {
+		this.company = company;
+	}
+
+	public NameSpaces getNamespaces() {
+		return namespaces;
+	}
+
+	public void setNamespaces(NameSpaces namespaces) {
+		this.namespaces = namespaces;
 	}
 	
 }

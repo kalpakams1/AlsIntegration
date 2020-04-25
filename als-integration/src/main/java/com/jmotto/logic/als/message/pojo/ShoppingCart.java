@@ -3,11 +3,14 @@ package com.jmotto.logic.als.message.pojo;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 /**
- * @author Renosh
+ * @author Kalpaka
  *
  */
 @XmlRootElement(name = "row")
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class ShoppingCart {
 	
 	@XmlAttribute

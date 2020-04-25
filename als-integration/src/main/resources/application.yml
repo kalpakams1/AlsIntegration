@@ -21,6 +21,9 @@ alsurls:
     insertVoucher: als_insert_voucher.cgi
     productSearch: als_get_product_search.cgi
     product: als_get_products.cgi
+    categoryGroups: als_get_category_groups.cgi
+    companyInfo: als_get_company_info.cgi
+    vendors: als_get_vendors.cgi
     
     #Params
     clientParam: 'client='

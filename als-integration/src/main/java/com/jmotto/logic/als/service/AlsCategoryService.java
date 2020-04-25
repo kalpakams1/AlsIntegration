@@ -6,4 +6,6 @@ public interface AlsCategoryService extends AlsBaseService{
 
 	public ResponseEntity<?> findCategories(Integer location, Integer categoryGroup, boolean includeDesc, boolean imageurl);
 	
+	public ResponseEntity<?> findCategoryGroups();
+	
 }

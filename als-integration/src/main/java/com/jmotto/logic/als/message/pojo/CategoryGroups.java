@@ -13,18 +13,17 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @XmlRootElement(name = "root")
 @XmlAccessorType(XmlAccessType.FIELD)
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public class Vendors {
+public class CategoryGroups {
 	
-	@XmlElementWrapper(name="vendors")
+	@XmlElementWrapper(name="categorygroups")
     @XmlElement(name="row")
-	private List<Vendor> vendors;
+	private List<Category> categorygroups;
 
-	public List<Vendor> getVendors() {
-		return vendors;
+	public List<Category> getCategorygroups() {
+		return categorygroups;
 	}
 
-	public void setVendors(List<Vendor> vendors) {
-		this.vendors = vendors;
+	public void setCategorygroups(List<Category> categorygroups) {
+		this.categorygroups = categorygroups;
 	}
-	
 }

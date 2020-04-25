@@ -22,7 +22,7 @@ public class ProductsDetails {
 	
 	@XmlElementWrapper(name="vendors")
     @XmlElement(name="row")
-	private List<Vendors> vendors;
+	private List<Vendor> vendors;
 
 	public List<Category> getCategories() {
 		return categories;
@@ -40,11 +40,11 @@ public class ProductsDetails {
 		this.products = products;
 	}
 
-	public List<Vendors> getVendors() {
+	public List<Vendor> getVendors() {
 		return vendors;
 	}
 
-	public void setVendors(List<Vendors> vendors) {
+	public void setVendors(List<Vendor> vendors) {
 		this.vendors = vendors;
 	}
 	

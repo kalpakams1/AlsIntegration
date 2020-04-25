@@ -7,15 +7,23 @@ public class AlsSearchCommonParameters {
 	private Integer vendor;
 	private Integer product;
 	private Integer	categorygroup;
+	private Integer	productRate;
 	
 	private boolean includedesc;
 	private boolean content;
 	private boolean nodefaultcontent;
 	private boolean	inactive;
+	private boolean	extendedInfo;
+	private boolean imageurl;
+	private boolean	productinfo;
+	private boolean	wholesale;
 	
 	private String	productsearch; 
 	private String	descriptionsearch;
 	private String	contentname;
+	private String	bookingdate;
+	private String	activitydate;
+	private String	date;
 	
 	
 	public Integer getLocation() {
@@ -97,7 +105,55 @@ public class AlsSearchCommonParameters {
 				+ ", nodefaultcontent=" + nodefaultcontent + ", productsearch=" + productsearch + ", descriptionsearch="
 				+ descriptionsearch + ", categorygroup=" + categorygroup + ", contentname=" + contentname
 				+ ", inactive=" + inactive + "]";
-	} 
+	}
+	public boolean isExtendedInfo() {
+		return extendedInfo;
+	}
+	public void setExtendedInfo(boolean extendedInfo) {
+		this.extendedInfo = extendedInfo;
+	}
+	public boolean isImageurl() {
+		return imageurl;
+	}
+	public void setImageurl(boolean imageurl) {
+		this.imageurl = imageurl;
+	}
+	public Integer getProductRate() {
+		return productRate;
+	}
+	public void setProductRate(Integer productRate) {
+		this.productRate = productRate;
+	}
+	public String getBookingdate() {
+		return bookingdate;
+	}
+	public void setBookingdate(String bookingdate) {
+		this.bookingdate = bookingdate;
+	}
+	public String getActivitydate() {
+		return activitydate;
+	}
+	public void setActivitydate(String activitydate) {
+		this.activitydate = activitydate;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public boolean isProductinfo() {
+		return productinfo;
+	}
+	public void setProductinfo(boolean productinfo) {
+		this.productinfo = productinfo;
+	}
+	public boolean isWholesale() {
+		return wholesale;
+	}
+	public void setWholesale(boolean wholesale) {
+		this.wholesale = wholesale;
+	}
 	
-	
+		
 }

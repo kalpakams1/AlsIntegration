@@ -4,11 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jmotto.logic.als.exception.JmottoAlsException;
+import com.jmotto.logic.als.message.pojo.AlsSearchCommonParameters;
 import com.jmotto.logic.als.service.AlsCategoryService;
 import com.jmotto.logic.als.util.LogThat;
 
@@ -29,13 +30,25 @@ public class AlsCategoryController {
 	 */
 	@GetMapping(value = "/categories", produces = "application/json")
 	@LogThat
-	public ResponseEntity<?> findCategories(@RequestParam(required = false) Integer location, 
-			@RequestParam(required = false) Integer categoryGroup, @RequestParam(required = false) boolean includeDesc,
-			@RequestParam(required = false) boolean imageurl) throws JmottoAlsException
+	public ResponseEntity<?> findCategories(@RequestBody(required = false) AlsSearchCommonParameters searchParams) throws JmottoAlsException
 	{
+		if(null == searchParams) {
+			searchParams = new AlsSearchCommonParameters();
+		}
 
-		return service.findCategories(location, categoryGroup, includeDesc, imageurl);
+		return service.findCategories(searchParams.getLocation(), searchParams.getCategorygroup(), searchParams.getIncludedesc(), searchParams.isImageurl());
 	}
-
 	
+	
+	/**
+	 * The als_get_category_groups.cgi interface all retrieve all category groups.
+	 * @param 
+	 * @return
+	 */
+	@GetMapping(value = "/categorygroups", produces = "application/json")
+	@LogThat
+	public ResponseEntity<?> findCategoryGroups() throws JmottoAlsException
+	{
+		return service.findCategoryGroups();
+	}
 }
